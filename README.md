@@ -23,3 +23,15 @@ Leur idée et de faire une phase de prétraitement afin d'éviter de traiter les
 Au départ 87 898 utilisateurs initiaux, l'algorithme génère 4 169 zones connexes.
 
 -> L'idée du prétraitement est clairement pertinente afin de réduire le nombre de données à traiter lors de la recherche des clusters afin d'augmenter la performance de l'algorithme. En effet, ce traitement ne se fait qu'à chaque fois qu'il y a un changement dans la base de données et encore on pourrait adapter l'algorithme pour qu'il ne recalcule que les zones concernés mais cela n'est pas l'objectif. On considère une base de données **statiques**. Traitement monolithique implique une précision maximale pour les clusters mais nécessite plus de temps.
+
+### État de l'art : Clustering Strategies in Satellite-Aided Communications (2025)
+
+[Article Link](https://arxiv.org/pdf/2509.13701)
+
+Ce papier analyse l'arbitrage critique entre la **vitesse d'exécution** et l'**optimisation du réseau** pour les satellites LEO.
+
+#### Points clés retenus pour le projet :
+* **Validation de la rapidité :** L'usage d'algorithmes de théorie des graphes (type zones connexes/Greedy) est indispensable pour traiter les ~88k utilisateurs en quelques secondes.
+* **Gestion de la densité :** Utilisation de logiques type **DBSCAN** pour gérer les zones nécessitant des clusters superposés (jusqu'à 4 Gbps).
+* **Réduction des interférences :** Application de la **coloration de graphe** pour séparer les fréquences des clusters qui se chevauchent.
+* **Optimisation post-calcul :** Les algorithmes génétiques ou le recentrage par centroïdes (K-Means) permettent d'affiner la précision après le prétraitement rapide.
