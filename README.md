@@ -7,10 +7,10 @@ On souhaite construire des **clusters d'utilisateurs** afin de faire pointer une
 Nous possédons les localisations des utlisateurs au format **CSV/HTML**, il faudra donc déveloper une méthode de parsing.
 
 Hypothèses :
-    - Cluster de taille fixe (**90km**): chaque cluster aura un diamètre de 90km.
-    - Pas de contrainte sur le centre du cluster: pas besoin de pointer le centre sur des endroits précis.
-    - Plusieurs clusters peuvent se superposer: permet de répondre à un besoin important dans une zone spécifique.
-    - Débit par cluster: 1, 2 ou 3 Gps.
+- Cluster de taille fixe (**90km**): chaque cluster aura un diamètre de 90km.
+- Pas de contrainte sur le centre du cluster: pas besoin de pointer le centre sur des endroits précis.
+- Plusieurs clusters peuvent se superposer: permet de répondre à un besoin important dans une zone spécifique.
+- Débit par cluster: 1, 2 ou 3 Gps.
 
 ## Ordre de traitement
 
