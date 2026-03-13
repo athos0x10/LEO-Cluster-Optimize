@@ -59,6 +59,13 @@ Ce papier démontre l'efficacité de **la courbe de Hilbert** pour les problème
 
 Ce papier explique ce qu'est le clustering et présente les algorithmes existants.
 
+### Etat de l'art : Algorithms for Disk Covering Problems with the Most Points
+Ce papier traîte des d'un nouvel algorithme glouton a heurstique permettant un clustering efficace selon nos contrainte.
+
+* Ces avantages: cette méthode donne pour un nombre de point non complet une distribution optimale des clusters (pour une taille de cluster fixe), et une très bonne approxiamation pour le nombre complet de point.
+* Ces défaut: malheureusement, l'approche gloutonne est très demandante en ressource (complexité élevée (O(k*n^2))).
+* Extension: on peut combiner cette méthode avec d'autre méthode afin d'améliorer sa complexité notamment en utilisant des heuristiques plus efficaces (mean shift,...)
+
 #### Points clés retenus pour le projet :
 
 * Algorithmes Partitionnels (Centroïdes) :
