@@ -38,8 +38,6 @@ Ce papier analyse l'arbitrage critique entre la **vitesse d'exécution** et l'**
 
 ### État de l'art : Analysis of the Clustering Properties of the Hilbert Space-Filling Curve (2001)
 
-[Article Link](https://ieeexplore-ieee-org.gorgone.univ-toulouse.fr/stampPDF/getPDF.jsp?tp=&arnumber=1427769&ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL2RvY3VtZW50LzE0Mjc3Njk=&tag=1)
-
 Ce papier démontre l'efficacité de **la courbe de Hilbert** pour les problèmes de clustering. Il étduie les propriétés de clustering de la courbe de remplissage d'espace de Hilbert. Ces courbes permettent de passer d'un espace multidimensionnel à un espace d'une dimension.
 
 #### Points clés retenus pour le projet :
@@ -51,14 +49,22 @@ Ce papier démontre l'efficacité de **la courbe de Hilbert** pour les problème
 * Chaque utilisateur se voit attribuer un "Hilbert Index" unique. C'est ici que la magie opère : si deux utilisateurs sont dans la même zone géographique de 90 km, leurs indices de Hilbert seront très proches numériquement.
 * On trie la liste des utilisateurs par ordre croissant d'index.
 
-### État de l'art : Survey of Clustering Algorythms (2005)
+### État de l'art : Survey of Clustering Algorithms (2005)
+
+[Article Link](https://ieeexplore-ieee-org.gorgone.univ-toulouse.fr/stampPDF/getPDF.jsp?tp=&arnumber=1427769&ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL2RvY3VtZW50LzE0Mjc3Njk=&tag=1)
 
 Ce papier explique ce qu'est le clustering et présente les algorithmes existants.
 
 #### Points clés retenus pour le projet :
 
-* Le clustering est une méthode d'apprentissage non supervisé visant à regrouper des données par similarité sans étiquettes préalables.
-* Il oppose principalement les méthodes hiérarchiques (structure en arbre) aux méthodes partitionnelles comme le K-means ou l'algorithme EM.
-* Des approches avancées intègrent la logique floue, les réseaux de neurones (SOFM, ART) et les algorithmes basés sur la théorie des graphes.
-* Les défis majeurs actuels résident dans le passage à l'échelle pour le Big Data et la validation statistique du nombre de clusters.
-* Ses applications sont cruciales en bioinformatique, notamment pour l'analyse de l'expression génique et le séquençage de l'ADN.
+* Algorithmes Partitionnels (Centroïdes) :
+    K-means : Très efficace avec une complexité de $O(NKd)$. C'est le standard pour les gros jeux de données, bien qu'il puisse converger vers des optima locaux.
+    PAM (K-medoids) : Plus robuste aux bruits mais plus coûteux, avec une complexité de $O(K(N-K)^2)$.
+
+* Algorithmes Hiérarchiques :
+    Méthodes classiques : Généralement très gourmandes, avec des complexités allant de $O(N^2)$ à $O(N^3)$, ce qui les limite aux petits jeux de données.
+    BIRCH : Optimisé pour le Big Data grâce à un arbre de caractéristiques, ramenant la complexité à $O(N)$.
+    CURE : Utilise l'échantillonnage pour atteindre $O(N_{s}^2 \log N_{s})$ (où $N_s$ est la taille de l'échantillon).
+* Algorithmes Basés sur la Densité et les Grilles :
+    DBSCAN : Capable de trouver des formes arbitraires. Sa complexité est de $O(N \log N)$ avec des structures spatiales (type R*-tree), mais monte à $O(N^2)$ dans le pire des cas.
+    CLIQUE : Combine densité et grilles pour la haute dimension avec une complexité de $O(N + \text{nombre de cellules})$.
