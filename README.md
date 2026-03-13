@@ -62,3 +62,5 @@ Ce papier explique ce qu'est le clustering et présente les algorithmes existant
 * Des approches avancées intègrent la logique floue, les réseaux de neurones (SOFM, ART) et les algorithmes basés sur la théorie des graphes.
 * Les défis majeurs actuels résident dans le passage à l'échelle pour le Big Data et la validation statistique du nombre de clusters.
 * Ses applications sont cruciales en bioinformatique, notamment pour l'analyse de l'expression génique et le séquençage de l'ADN.
+
+nicolas.gresset-bourgeois@tesa.prd.fr
