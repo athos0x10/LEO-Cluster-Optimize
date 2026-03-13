@@ -79,3 +79,22 @@ Ce papier traîte des d'un nouvel algorithme glouton a heurstique permettant un 
 * Ces avantages: cette méthode donne pour un nombre de point non complet une distribution optimale des clusters (pour une taille de cluster fixe), et une très bonne approxiamation pour le nombre complet de point.
 * Ces défaut: malheureusement, l'approche gloutonne est très demandante en ressource (complexité élevée $O(K*N^2)$).
 * Extension: on peut combiner cette méthode avec d'autre méthode afin d'améliorer sa complexité notamment en utilisant des heuristiques plus efficaces (mean shift,...)
+
+
+
+
+### État de l'art : Minimum-Cost Coverage of Point Sets by Disks (2006)
+
+[Article Link](https://arxiv.org/pdf/cs/0604008)
+
+Cet article étudie l'optimisation du placement de serveurs pour couvrir des points de demande. Il démontre que la recherche d'une solution optimale est complexe et propose des méthodes d'approximation.
+
+ *  Complexité : Les auteurs prouvent que le problème est NP-difficile en 2D pour tout exposant de coût α≥1. Cela justifie l'abandon d'une recherche de solution exacte au profit d'algorithmes d'approximation (heuristiques) pour minimiser le nombre de clusters.
+
+ *   Algorithme Glouton (Greedy Growth) : L'étude présente des stratégies "Greedy" offrant des facteurs d'approximation constants (2 ou 3). La logique consiste à traiter les points de demande de manière séquentielle, en plaçant les disques là où ils couvrent le plus de besoins immédiats.
+
+#### Points clés pour le projet :
+
+* Adaptabilité : Bien que l'article traite de rayons variables, la logique gloutonne est directement transposable à une contrainte de capacité. Dans notre cas, le rayon est fixe : l'algorithme "sature" le cluster jusqu'au seuil de débit. Une fois la capacité atteinte, les utilisateurs restants sont traités par un nouveau cluster.
+
+* Gestion des superpositions : L'article valide mathématiquement que la superposition totale ou partielle de disques est nécessaire pour atteindre l'optimalité dans les zones à forte densité de points. Cela légitime l'hypothèse de notre énoncé autorisant plusieurs clusters sur un même centre.
