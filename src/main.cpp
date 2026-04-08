@@ -10,7 +10,8 @@
 
 int main() {
   std::string path = "../data/generated.csv";
-  std::vector<UserPoint> users = CsvToUser(path);
+  std::string pathUser = "../data/UserAndId.csv";
+  std::vector<UserPoint> users = CsvToUser(path, true, pathUser);
 
   if (users.empty()) {
     std::cerr << "Erreur : Fichier vide ou introuvable." << std::endl;
